@@ -26,7 +26,6 @@ pipeline {
             }
         }
     }
-
     post {
         success {
             echo 'Pipeline succeeded! Triggering notifications...'
