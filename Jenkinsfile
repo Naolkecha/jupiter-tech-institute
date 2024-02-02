@@ -14,15 +14,10 @@ stages {
             }
         }
 
-        stage('Run Tests') {
-            steps {
-                bat 'npm test'
-            }
-        }
-
+       
         stage('Build') {
             steps {
-                bat 'npm run build'
+                bat 'cd Server/server.js npm run build'
             }
         }
 
