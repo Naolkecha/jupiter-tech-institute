@@ -26,27 +26,28 @@ pipeline {
             }
         }
 
-        stage('Upload to cPanel') {
-            steps {
-                script {
-                    def localPath = "C:\\Users\\naolk\\Documents\\project\\jupiter\\Frontend\\build"
-                    def remoteDir = '/home/jupitertechinsti/public_html/'
-                    def cpanelServer = 'jupitertechinsti@jupitertechinstitute.com'
-                    def ftpUsername = 'cicd@jupitertechinstitute.com'
-                    def ftpPassword = '?Iy~vFcD^.XK'
+         stage('Upload to cPanel') {
+        steps {
+            script {
+                def localPath = "C:\\Users\\naolk\\Documents\\project\\jupiter\\Frontend\\build"
+                def remoteDir = '/home/jupitertechinsti/public_html/'
+                def cpanelServer = 'jupitertechinsti@jupitertechinstitute.com'
+                def ftpUsername = 'cicd@jupitertechinstitute.com'
+                def ftpPassword = '?Iy~vFcD^.XK'
 
-                    // Iterate through each file and upload to cPanel using curl
-                    bat """
-                        @echo off
-                        setlocal enabledelayedexpansion
-                        for %%i in ("${localPath}\\*") do (
-                            curl -T "%%i" ftp://%ftpUsername%:%ftpPassword%@%cpanelServer%@jupitertechinstitute.com${remoteDir}
-                        )
-                        endlocal
-                    """
-                }
+                // Iterate through each file and upload to cPanel using curl
+                bat """
+                    @echo off
+                    setlocal enabledelayedexpansion
+                    for %%i in ("${localPath}\\*") do (
+                        curl -T "%%i" ftp://${ftpUsername}:${ftpPassword}@${cpanelServer}/${remoteDir}
+                    )
+                    endlocal
+                """
             }
         }
+    }
+
     }
 
     post {
