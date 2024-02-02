@@ -30,6 +30,7 @@ return (
                         <a className="btn btn-square btn-outline-light me-1" href="https://www.facebook.com/profile.php?id=61551402171263"><i className="fab fa-facebook-f"></i></a>
                         <a className="btn btn-square btn-outline-light me-1" href="/"><i className="fab fa-youtube"></i></a>
                         <a className="btn btn-square btn-outline-light me-0" href="https://vm.tiktok.com/ZM6eCGcjG"><i className="fab fa-tiktok"></i></a>
+                    
                     </div>
                 </div>
             </div>
