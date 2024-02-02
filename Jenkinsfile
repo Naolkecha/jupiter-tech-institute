@@ -4,11 +4,9 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                // Checkout the code from the repository
                 checkout scm
             }
         }
-        
 
         stage('Build and Run Node.js App') {
             steps {
@@ -23,16 +21,6 @@ pipeline {
                     }
                 }
             }
-    }
-
-    post {
-        success {
-            // Actions to execute on successful build
-            echo 'Build successful!'
-        }
-        failure {
-            // Actions to execute on build failure
-            echo 'Build failed!'
         }
     }
 }
