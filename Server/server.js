@@ -96,8 +96,6 @@ app.get('/api/students', (req, res) => {
     });
   });
 });
-
-
 // Handle form submission
 app.post('/api/register', (req, res) => {
   const formData = req.body;
