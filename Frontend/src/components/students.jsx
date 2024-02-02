@@ -36,7 +36,7 @@ const StudentData = () => {
 
   const handleDeleteStudent = async (studentId) => {
     try {
-      await axios.delete(`http://localhost:3000/api/students/delete/${studentId}`);
+      await axios.delete(`http://student.jupitertechinstitute.com/api/students/delete/${studentId}`);
       setStudents((prevStudents) => prevStudents.filter((student) => student.id !== studentId));
     } catch (error) {
       console.error("Error deleting student:", error);

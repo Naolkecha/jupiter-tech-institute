@@ -13,7 +13,7 @@ const LoginPage = () => {
     setErrorMessage(''); // Clear error message on submit
 
     try {
-      const response = await axios.post('http://localhost:3000/api/login', { username, password });
+      const response = await axios.post('http://student.jupitertechinstitute.com/api/login', { username, password });
       if (response.data.success) {
         const token = response.data.token;
         document.cookie = `token=${encodeURIComponent(token)}; path=/;`; // set cookie with path attribute for all routes
