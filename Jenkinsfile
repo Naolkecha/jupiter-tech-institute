@@ -8,7 +8,6 @@ pipeline {
                 checkout scm
             }
         }
-
         stage('Install Dependencies') {
             steps {
                 // Install dependencies for your project
