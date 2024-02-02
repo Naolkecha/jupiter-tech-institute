@@ -2,25 +2,39 @@ pipeline {
     agent any
 
     stages {
-        stage('Checkout') {
+        stage('Install Dependencies') {
             steps {
-                checkout scm
+                // Step 1: Install Node.js Dependencies for the server
+                bat 'cd C:\\Users\\naolk\\Documents\\project\\jupiter\\Server && npm install'
+                
+                // Step 2: Install Node.js Dependencies for the client
+                bat 'cd C:\\Users\\naolk\\Documents\\project\\jupiter\\Frontend && npm install'
             }
         }
 
-        stage('Build and Run Node.js App') {
+        stage('Build React App') {
             steps {
-                script {
-                    // Change to the app directory
-                    dir('app') {
-                        // Run npm install (if needed)
-                        sh 'npm install'
-
-                        // Run the Node.js app
-                        sh 'node app.js'
-                    }
-                }
+                // Step 3: Build the React App
+                bat 'cd C:\\Users\\naolk\\Documents\\project\\jupiter\\Frontend && npm run build'
             }
+        }
+
+        stage('Start Node.js Server') {
+            steps {
+                // Step 4: Start the Node.js Server in the background
+                bat 'start cmd /c "cd C:\\Users\\naolk\\Documents\\project\\jupiter\\Server && npm start"'
+            }
+        }
+    }
+
+    post {
+        success {
+            echo 'Pipeline succeeded! Triggering notifications...'
+            // Add notification steps (e.g., email, Slack) on success
+        }
+        failure {
+            echo 'Pipeline failed! Triggering notifications...'
+            // Add notification steps (e.g., email, Slack) on failure
         }
     }
 }
