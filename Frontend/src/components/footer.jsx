@@ -26,10 +26,13 @@ return (
                    
                     <h6 className="text-white mt-4 mb-3">Follow Us</h6>
                     <div className="d-flex pt-2">
+
+
                         <a className="btn btn-square btn-outline-light me-1" href="https://t.me/jupiterinstituteoftechnology"><i className="fab fa-telegram"></i></a>
                         <a className="btn btn-square btn-outline-light me-1" href="https://www.facebook.com/profile.php?id=61551402171263"><i className="fab fa-facebook-f"></i></a>
                         <a className="btn btn-square btn-outline-light me-1" href="/"><i className="fab fa-youtube"></i></a>
                         <a className="btn btn-square btn-outline-light me-0" href="https://vm.tiktok.com/ZM6eCGcjG"><i className="fab fa-tiktok"></i></a>
+                    
                     
                     </div>
                 </div>
