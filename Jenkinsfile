@@ -31,9 +31,9 @@ pipeline {
             script {
                 def localPath = "C:\\Users\\naolk\\Documents\\project\\jupiter\\Frontend\\build"
                 def remoteDir = '/home/jupitertechinsti/public_html/'
-                def cpanelServer = 'jupitertechinsti@jupitertechinstitute.com'
-                def ftpUsername = 'cicd@jupitertechinstitute.com'
-                def ftpPassword = '?Iy~vFcD^.XK'
+                def cpanelServer = 'jupitertechinstitute.com'
+                def ftpUsername = 'newuser@jupitertechinstitute.com'
+                def ftpPassword = '=5BVd.H_5UL{'
 
                 // Iterate through each file and upload to cPanel using curl
                 bat """
