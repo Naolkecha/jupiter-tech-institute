@@ -10,7 +10,7 @@ const singleCourse = () => {
             <div className="container d-xl-flex align-items-start flex-xl-row">
                 <div class="row">
                 <div class="col-12 mb-md-4 mt-3 ">
-                    <img src="img/courses-2.jpg" class="img-fluid w-75 h-75"></img>
+                    <img src="img/courses-2.jpg" alt=" " class="img-fluid w-75 h-75"></img>
                 </div>
                 </div>
             <div class="row d-flex flex-column align-items-left m-lg-4 mt-2 justify-content-between pl-1 ml-1">
