@@ -58,7 +58,7 @@ return (
     </div>
     <nav className="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0">
  
-        <img className="navbar-brand d-flex align-items-center border-end px-4 px-lg-5" src="img/Jupiter.png" ></img>
+        <img alt="new" className="navbar-brand d-flex align-items-center border-end px-4 px-lg-5" src="img/Jupiter.png" ></img>
   
         <button type="button" className="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span className="navbar-toggler-icon"></span>

@@ -121,9 +121,6 @@ const Register = () => {
       }
 
       // Registration successful, you can handle the response if needed
-      
-
-      const result = await response.json();
       setSuccessPopupVisible(true);
       setFormData({
         fname: "",

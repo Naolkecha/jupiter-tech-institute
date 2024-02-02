@@ -1,7 +1,6 @@
 // Filename - App.js
 
 import React from "react";
-import Navbar from './components/navbar';
 import {
 	BrowserRouter as Router,
 	Routes,

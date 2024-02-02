@@ -5,7 +5,7 @@ import Footer from '../components/footer';
 
 
 const Course = () => {
-    const [courses, setCourses] = useState([
+    const [courses] = useState([
         {title:"Mobile Maintenance", description:"Hardware maintenance, Software maintenance, Multimetre usage", price: "1500", length:"3 Months", image:'' },
         {title:"Basic computer skills", description:"Computer System, Computer security, Ms Office Word, Ms Office power point, Ms office Access, Ms office Excel and Ms Office publisher ", price: "1200", length:"3 Months", image:'-2.jpg'},
         {title:"TV maintenance", description:"CRT, LED and LCD", price: "3000", length:"3 Months", image:'' },

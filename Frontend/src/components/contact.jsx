@@ -91,7 +91,7 @@ return (
             <div class="row g-5">
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style={{minHeight: '450px'}}>
                     <div class="position-relative h-100">
-                    <iframe className="position-relative w-100 h-100" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2049.3807965209617!2d38.66187678551103!3d9.071835514162402!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x164b89e7db51b633%3A0x5259a9d62920fd45!2sTserha%20Tsihon!5e1!3m2!1sen!2sus!4v1702758124671!5m2!1sen!2sus"
+                    <iframe className="position-relative w-100 h-100" alt="" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2049.3807965209617!2d38.66187678551103!3d9.071835514162402!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x164b89e7db51b633%3A0x5259a9d62920fd45!2sTserha%20Tsihon!5e1!3m2!1sen!2sus!4v1702758124671!5m2!1sen!2sus"
                         frameborder="0" style={{minHeight: '450px', border:0}} allowfullscreen="" aria-hidden="false"
                         tabindex="0"></iframe>
                     </div>
