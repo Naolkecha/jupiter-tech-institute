@@ -10,7 +10,7 @@ const port = 3000;
 const cors = require('cors');
 
 app.use(cors({
-  origin: 'http://localhost:3001',
+  origin: 'https://www.jupitertechinstitute.com',
   methods: ['GET', 'POST', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
