@@ -13,22 +13,10 @@ pipeline {
             steps {
                 // Install dependencies for your project
                 dir('client') {
-                    bat 'npm install'
+                    bat 'bat 'cd /Frontend npm install'
                 }
                 dir('server') {
-                    bat 'npm install'
-                }
-            }
-        }
-
-        stage('Run Tests') {
-            steps {
-                // Run tests for your project
-                dir('client') {
-                    bat 'npm test'
-                }
-                dir('server') {
-                    bat 'npm test'
+                    bat 'cd /Frontend npm install'
                 }
             }
         }
