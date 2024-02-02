@@ -37,7 +37,7 @@ pipeline {
             steps {
                 // Build your project
                 dir('client') {
-                    bat 'npm run build'
+                    bat 'cd /Frontend npm run build'
                 }
                 dir('server') {
                     // Add any specific build steps for the server, if needed
@@ -49,7 +49,7 @@ pipeline {
             steps {
                 // Run the server
                 dir('server') {
-                    bat 'npm start'
+                    bat 'cd /Frontend npm start'
                 }
             }
         }
