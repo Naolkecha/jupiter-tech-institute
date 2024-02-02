@@ -8,45 +8,21 @@ pipeline {
                 checkout scm
             }
         }
-        stage('Install Dependencies') {
-            steps {
-                // Install dependencies for your project
-                dir('client') {
-                    bat 'bat 'cd /Frontend npm install'
-                }
-                dir('server') {
-                    bat 'cd /Frontend npm install'
-                }
-            }
-        }
+        
 
-        stage('Build') {
+        stage('Build and Run Node.js App') {
             steps {
-                // Build your project
-                dir('client') {
-                    bat 'cd /Frontend npm run build'
-                }
-                dir('server') {
-                    // Add any specific build steps for the server, if needed
-                }
-            }
-        }
+                script {
+                    // Change to the app directory
+                    dir('app') {
+                        // Run npm install (if needed)
+                        sh 'npm install'
 
-        stage('Run Server') {
-            steps {
-                // Run the server
-                dir('server') {
-                    bat 'cd /Frontend npm start'
+                        // Run the Node.js app
+                        sh 'node app.js'
+                    }
                 }
             }
-        }
-
-        stage('Deploy') {
-            steps {
-                // Add deployment steps (replace with your deployment command)
-                echo 'Deploying the application'
-            }
-        }
     }
 
     post {
