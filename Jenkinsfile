@@ -1,39 +1,48 @@
 pipeline {
     agent any
 
-    stages {
+stages {
         stage('Checkout') {
             steps {
                 checkout scm
             }
         }
 
-        stage('Build') {
+        stage('Install Dependencies') {
             steps {
-                sh 'your_build_command_here'
+                bat 'npm install'
             }
         }
 
-        stage('Test') {
+        stage('Run Tests') {
             steps {
-                sh 'your_test_command_here'
+                bat 'npm test'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                bat 'npm run build'
             }
         }
 
         stage('Deploy') {
             steps {
-                sh 'your_deploy_command_here'
+                // Add deployment steps here, for example, copying files to a server
+                // bat 'your_deploy_command_here'
             }
         }
 
         stage('Security Scan') {
             steps {
-                script {
-                    withSonarQubeEnv('SonarQubeServer') {
-                        sh 'your_sonar_scan_command_here'
-                    }
-                }
+                // Add security scan steps here, if applicable
             }
+        }
+    }
+
+    post {
+        success {
+            // Add post-build actions if needed
         }
     }
 }
