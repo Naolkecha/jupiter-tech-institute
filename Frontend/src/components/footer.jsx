@@ -33,7 +33,7 @@ return (
                         <a className="btn btn-square btn-outline-light me-1" href="/"><i className="fab fa-youtube"></i></a>
                         <a className="btn btn-square btn-outline-light me-0" href="https://vm.tiktok.com/ZM6eCGcjG"><i className="fab fa-tiktok"></i></a>
                     
-                    
+
                     </div>
                 </div>
             </div>
@@ -55,11 +55,6 @@ return (
     </div>
 </div>
 
-
 )
-
-
-
 }
-
 export default Footer;
