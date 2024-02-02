@@ -27,24 +27,28 @@ pipeline {
         }
 
         stage('Upload to cPanel') {
-     steps {
-        script {
-            def remoteDir = '/home/jupitertechinsti/public_html'
-            def cpanelServer = 'jupitertechinsti@jupitertechinstitute.com'
-            def ftpUsername = 'cicd@jupitertechinstitute.com'
-            def ftpPassword = '?Iy~vFcD^.XK'
-            def localFilesPath = "C:\\Users\\naolk\\Documents\\project\\jupiter\\Frontend\\build\\*"
+            steps {
+                script {
+                    def localPath = "C:\\Users\\naolk\\Documents\\project\\jupiter\\Frontend\\build"
+                    def remoteDir = '/home/jupitertechinsti/public_html/'
+                    def cpanelServer = 'jupitertechinsti@jupitertechinstitute.com'
+                    def ftpUsername = 'cicd@jupitertechinstitute.com'
+                    def ftpPassword = '?Iy~vFcD^.XK'
 
-            // Use FTP to upload files
-            bat "curl -T ${localFilesPath} ftp://${ftpUsername}:${ftpPassword}@${cpanelServer}/${remoteDir}/"
-
-            // Optional: Trigger any additional actions after upload
-            // bat "ssh ${cpanelServer} 'cd ${remoteDir}/Server && pm2 restart server'"
+                    // Iterate through each file and upload to cPanel using curl
+                    bat """
+                        @echo off
+                        setlocal enabledelayedexpansion
+                        for %%i in ("${localPath}\\*") do (
+                            curl -T "%%i" ftp://%ftpUsername%:%ftpPassword%@%cpanelServer%@jupitertechinstitute.com${remoteDir}
+                        )
+                        endlocal
+                    """
+                }
+            }
         }
     }
-}
 
-    }
     post {
         success {
             echo 'Pipeline succeeded! Triggering notifications...'
