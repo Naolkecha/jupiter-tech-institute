@@ -25,6 +25,25 @@ pipeline {
                 bat 'start cmd /c "cd C:\\Users\\naolk\\Documents\\project\\jupiter\\Server && npm start"'
             }
         }
+
+        stage('Upload to cPanel') {
+     steps {
+        script {
+            def remoteDir = '/home/jupitertechinsti/public_html'
+            def cpanelServer = 'jupitertechinsti@jupitertechinstitute.com'
+            def ftpUsername = 'cicd@jupitertechinstitute.com'
+            def ftpPassword = '?Iy~vFcD^.XK'
+            def localFilesPath = "C://Users//naolk//Documents//project//jupiter/Frontend/build/*"
+
+            // Use FTP to upload files
+            bat "curl -T ${localFilesPath} ftp://${ftpUsername}:${ftpPassword}@${cpanelServer}/${remoteDir}/"
+
+            // Optional: Trigger any additional actions after upload
+            // bat "ssh ${cpanelServer} 'cd ${remoteDir}/Server && pm2 restart server'"
+        }
+    }
+}
+
     }
     post {
         success {
