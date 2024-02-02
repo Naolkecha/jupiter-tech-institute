@@ -33,7 +33,7 @@ pipeline {
             def cpanelServer = 'jupitertechinsti@jupitertechinstitute.com'
             def ftpUsername = 'cicd@jupitertechinstitute.com'
             def ftpPassword = '?Iy~vFcD^.XK'
-            def localFilesPath = "C://Users//naolk//Documents//project//jupiter/Frontend/build/*"
+            def localFilesPath = "C:\\Users\\naolk\\Documents\\project\\jupiter\\Frontend\\build\\*"
 
             // Use FTP to upload files
             bat "curl -T ${localFilesPath} ftp://${ftpUsername}:${ftpPassword}@${cpanelServer}/${remoteDir}/"
