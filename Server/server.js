@@ -76,7 +76,7 @@ app.post('/api/login', async (req, res) => {
 });
 });
 
-//creating route for the app
+//creating for the app
 app.get('/api/students', (req, res) => {
   pool.getConnection((err, connection) => {
     if (err) {
@@ -96,6 +96,12 @@ app.get('/api/students', (req, res) => {
     });
   });
 });
+
+
+
+
+
+
 // Handle form submission
 app.post('/api/register', (req, res) => {
   const formData = req.body;
